@@ -1,13 +1,12 @@
 import { expect_to_fail, get_account, set_mockup, set_mockup_now, set_quiet } from '@completium/experiment-ts'
 
-const assert = require('assert')
+import assert from 'assert';
 
 import { pausable } from './binding/pausable'
 
 /* Accounts ---------------------------------------------------------------- */
 
 const alice = get_account('alice');
-const bob = get_account('bob')
 
 /* Endpoint ---------------------------------------------------------------- */
 
@@ -23,7 +22,7 @@ set_mockup_now(new Date(Date.now()))
 
 /* Scenario ---------------------------------------------------------------- */
 
-describe('[Template] pausable', async () => {
+describe('[Template] pausable', () => {
   it('Deploy pausable', async () => {
     await pausable.deploy({ as: alice })
   });
